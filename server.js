@@ -49,5 +49,10 @@ io.on("connection", (socket) => {//listen when a client connects in a socket
 app.get("/", (req, res) => {//this message will be shown on the following port if the server is running correctly
   res.send("server is running")
 })
-const port = 4000
-server.listen(port, "0.0.0.0", () => console.log(`http://localhost:${port}`));//starts server on the provided port
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
+//starts server on the provided port
+
